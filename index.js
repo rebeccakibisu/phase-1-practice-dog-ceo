@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
-  const breedUrl = "https://dog.ceo/api/breeds/list/all";
+  const baseUrl = "https://dog.ceo/";
+  const imgUrl = `${baseUrl}api/breeds/image/random/4`;
+  const breedUrl = `${baseUrl}api/breeds/list/all`;
+
+  const imageContainer = document.getElementById("dog-image-container");
   const breedList = document.getElementById("dog-breeds");
   const dropdown = document.getElementById("breed-dropdown");
 
@@ -16,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.alt = "A random dog";
         img.style.width = "200px";
         img.style.margin = "10px";
-        document.body.appendChild(img);
+        imageContainer.appendChild(img);
       });
     })
     .catch(err => console.error("Image fetch error:", err));
